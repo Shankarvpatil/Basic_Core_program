@@ -1,15 +1,19 @@
 import java.util.Scanner;
-public class LeapYear {
+public class PowerOfTwo {
     public static void main(String[] args) {
+        System.out.print("Enter a number: ");
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter a year: ");
-        int  year = sc.nextInt();
+        int N = sc.nextInt();
+        int p = 1;
 
-        if ( (year % 4 == 0 && year % 100 != 0) || year % 400 == 0 ) {
-            System.out.println(year + " is Leap year.");
-        } else {
-            System.out.println(year + " is not a Leap year.");
+        if (N > 0 && N < 31) {
+            for (int i = 1; i <= N; i++) {
+                p = p * 2;
+                System.out.println(2 + " to the power " + i + " : " + p);
+            }
+        } 
+        else {
+            System.out.println("Overflow");
         }
-
     }
 }
