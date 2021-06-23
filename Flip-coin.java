@@ -1,19 +1,17 @@
 import java.util.Scanner;
-public class PowerOfTwo {
+public class SwapNumber {
+    static int temp;
     public static void main(String[] args) {
-        System.out.print("Enter a number: ");
-        Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
-        int p = 1;
-
-        if (N > 0 && N < 31) {
-            for (int i = 1; i <= N; i++) {
-                p = p * 2;
-                System.out.println(2 + " to the power " + i + " : " + p);
-            }
-        } 
-        else {
-            System.out.println("Overflow");
-        }
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter 1st number: ");
+        int num1 = s.nextInt();
+        System.out.print("Enter 2nd number: ");
+        int num2 = s.nextInt();
+        temp = num1;
+        num1 = num2;
+        num2 = temp;
+        System.out.println("After swapping :");
+        System.out.println("num1 =" + num1);
+        System.out.println("num2 =" + num2);
     }
 }
