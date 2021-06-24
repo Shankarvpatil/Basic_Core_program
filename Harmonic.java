@@ -1,18 +1,26 @@
 import java.util.Scanner;
-public class HarmonicSeries {
+
+public class VovelConsonant {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-        System.out.print("Enter a number : ");
-        int num = s.nextInt();
-        double harmonicNum = 0;
-
-        if (num>0) {
-            for (int i=1; i<=num; i++) {
-                harmonicNum = harmonicNum + (1.0/i);
-            }
-            System.out.printf("Harmonic number is: %.4f ", harmonicNum);
-        } else {
-            System.out.println("Number should be greater than 0.");
+        System.out.print("Enter an alphabet: ");
+        char alphabet = s.next().charAt(0);
+        switch (alphabet) {
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
+            case 'A':
+            case 'E':
+            case 'I':
+            case 'O':
+            case 'U':
+                System.out.println(alphabet + " is vovel");
+                break;
+            default:
+                System.out.println(alphabet + " is consonant");
         }
+
     }
 }
