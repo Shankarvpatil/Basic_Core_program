@@ -1,15 +1,26 @@
 import java.util.Scanner;
-public class QuotientRemainder {
+
+public class VovelConsonant {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-        System.out.print("Enter a dividend: ");
-        int dividend = s.nextInt();
-        System.out.print("Enter a divisor: ");
-        int divisor = s.nextInt();
-        int quotient = dividend / divisor;
-        int remainder = dividend % divisor;
-        System.out.println("Quotient: " + quotient);
-        System.out.println("Remainder: " + remainder);
+        System.out.print("Enter an alphabet: ");
+        char alphabet = s.next().charAt(0);
+        switch (alphabet) {
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
+            case 'A':
+            case 'E':
+            case 'I':
+            case 'O':
+            case 'U':
+                System.out.println(alphabet + " is vovel");
+                break;
+            default:
+                System.out.println(alphabet + " is consonant");
+        }
 
     }
 }
