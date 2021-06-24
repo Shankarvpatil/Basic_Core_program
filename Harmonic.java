@@ -1,32 +1,41 @@
 import java.util.Scanner;
-public class LargestNumber {
+
+public class PrimeFactor {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-        System.out.print("Enter the size of an array: ");
-        int arraySize = s.nextInt();
-        int[] arr = arrayCreation(arraySize);
-        int largestNum = findMax(arraySize, arr);
-        System.out.println("Largest number is " + largestNum);
+        System.out.print("Enter a number: ");
+        int number = s.nextInt();
+        //boolean prime = isPrime(number);
+        //System.out.println(prime);
+        primeFactors(number);
     }
-
-    private static int[] arrayCreation(int arraySize){
-        Scanner s = new Scanner(System.in);
-        int[] number = new int[arraySize];
-        for ( int i=0; i<arraySize; i++ ) {
-            System.out.print("Enter value: ");
-            number[i] = s.nextInt();
-        }
-        return number;
-    }
-
-    // 'findMax' function return a Largest values from an array.
-    private static int findMax(int arraySize, int[] arrElements) {
-        int largestNum = Integer.MIN_VALUE;
-        for (int i=0; i<arraySize; i++) {
-            if (largestNum < arrElements[i]) {
-                largestNum = arrElements[i];
+    private static boolean isPrime(int number) {
+        int i = 2;
+        //boolean flag = true;
+        int count = 0;
+        if (number == 1 || number == 0) {
+            return false;
+        } else {
+            while(i < (number/2)) {
+                if (number%i == 0) {
+                    count++;
+                }
+                i++;
             }
+            if (count == 1)
+                return false;
+            return true;
         }
-        return largestNum;
+    }
+
+    private static void primeFactors(int primeFactors) {
+        int i = 2;
+        while (primeFactors > 1) {
+            if (primeFactors%i == 0 && isPrime(i) == true) {
+                System.out.println(i);
+                primeFactors = primeFactors / i;
+            }
+            i++;
+        }
     }
 }
